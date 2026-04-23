@@ -27,8 +27,8 @@
   function makeLane(laneIndex) {
     const color = BRANCH_COLORS[laneIndex % BRANCH_COLORS.length];
     const nodes = [];
-    // How many nodes we need to fill the screen top-to-bottom
-    const count = Math.ceil(2000 / NODE_SPACING) + 4;
+    // How many nodes we need to fill the screen top-to-bottom (use full canvas height, doubled for smooth looping)
+    const count = Math.ceil((height * 2) / NODE_SPACING) + 4;
     for (let i = 0; i < count; i++) {
       nodes.push({
         // Random horizontal jitter so branches don't sit perfectly vertical
